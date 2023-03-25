@@ -14,6 +14,12 @@
         android:theme="@style/Theme.App21EFullPyramidFinal"
         tools:targetApi="31">
         <activity
+            android:name=".GridView11"
+            android:exported="false" />
+        <activity
+            android:name=".AutoCompleteText"
+            android:exported="false" />
+        <activity
             android:name=".SpinnerActivity"
             android:exported="false" />
         <activity

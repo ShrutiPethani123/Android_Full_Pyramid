@@ -29,25 +29,23 @@ public class SpinnerActivity extends AppCompatActivity {
         country.add("USA");
 
 //        ArrayAdapter<String>arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item,country);
-        ArrayAdapter<String>arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview1,country){
+        ArrayAdapter<String>arrayAdapter = new ArrayAdapter<String>(this, R.layout.listview1,country){
 
-            @Override
             public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 //                return super.getDropDownView(position, convertView, parent);
-                TextView tvdata = (TextView) super.getDropDownView(position, convertView, parent);
+                TextView tvData = (TextView) super.getDropDownView(position, convertView, parent);
 
-                if(position==0)
-                {
-                    tvdata.setTextColor(Color.RED);
-                }else{
-                    tvdata.setTextColor(Color.GREEN);
+                if (position == 0 || position==1){
+                    tvData.setTextColor(Color.BLACK);
+                }else {
+                    tvData.setTextColor(Color.BLUE);
                 }
-                return  tvdata;
+                return tvData;
             }
         };
-
-
         spinner.setAdapter(arrayAdapter);
+
+
 
 
     }

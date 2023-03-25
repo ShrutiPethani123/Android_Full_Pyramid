@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.GridView;
 
 public class SplashScreen2 extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class SplashScreen2 extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen2.this,SpinnerActivity.class);
+                Intent i = new Intent(SplashScreen2.this, GridView11.class);
                 startActivity(i);
                 finish();
             }
