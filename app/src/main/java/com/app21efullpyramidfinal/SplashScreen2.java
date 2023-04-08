@@ -17,7 +17,7 @@ public class SplashScreen2 extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen2.this, SeekBarActivity.class);
+                Intent i = new Intent(SplashScreen2.this, TicTacToe.class);
                 startActivity(i);
                 finish();
             }
