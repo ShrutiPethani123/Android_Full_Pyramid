@@ -3,8 +3,10 @@ package com.app21efullpyramidfinal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TicTacToe extends AppCompatActivity {
@@ -13,6 +15,7 @@ public class TicTacToe extends AppCompatActivity {
     String b1,b2,b3,b4,b5,b6,b7,b8,b9;
     int flag=0;
     int count=0;
+    TextView tvResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class TicTacToe extends AppCompatActivity {
         btn7 = findViewById(R.id.btn7);
         btn8 = findViewById(R.id.btn8);
         btn9= findViewById(R.id.btn9);
+        tvResult = findViewById(R.id.result_tv);
 
     }
 
@@ -68,41 +72,50 @@ public class TicTacToe extends AppCompatActivity {
                 if(b1.equals(b2) && b2.equals(b3) && !b1.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b1, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b1);
+                    delayRestart();
 
                 }else if(b4.equals(b5) && b5.equals(b6) && !b5.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b5, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b5);
+                    delayRestart();
 
                 }else if(b7.equals(b8) && b8.equals(b9) && !b7.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b7, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b7);
+                    delayRestart();
                 }else if(b1.equals(b4) && b4.equals(b7) && !b7.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b4, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b4);
+                    delayRestart();
                 }else if(b2.equals(b5) && b5.equals(b8) && !b8.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b8, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b8);
+                    delayRestart();
                 }else if(b3.equals(b6) && b6.equals(b9) && !b9.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b9, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b9);
+                    delayRestart();
                 }else if(b1.equals(b5) && b5.equals(b9) && !b9.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b1, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b1);
+                    delayRestart();
                 }else if(b3.equals(b5) && b5.equals(b7) && !b7.equals(""))
                 {
                     Toast.makeText(this, "WIN " + b7, Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("WIN" + b7);
+                    delayRestart();
                 }else if(count==9)
                 {
                     Toast.makeText(this, "Tie.....", Toast.LENGTH_LONG).show();
-                    restartGame();
+                    tvResult.setText("DRAW");
+                    delayRestart();
                 }
 
             }
@@ -111,6 +124,18 @@ public class TicTacToe extends AppCompatActivity {
         }
 
     }
+
+    private void delayRestart() {
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                restartGame();
+            }
+        },5000);
+    }
+
 
     private void restartGame() {
 
@@ -123,6 +148,7 @@ public class TicTacToe extends AppCompatActivity {
         btn7.setText("");
         btn8.setText("");
         btn9.setText("");
+        tvResult.setText("");
         count=0;
         flag=0;
     }
