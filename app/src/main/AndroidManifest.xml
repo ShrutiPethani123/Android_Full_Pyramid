@@ -16,6 +16,12 @@
         android:theme="@style/Theme.App21EFullPyramidFinal"
         tools:targetApi="31">
         <activity
+            android:name=".HomeSP"
+            android:exported="false" />
+        <activity
+            android:name=".LoginSP"
+            android:exported="false" />
+        <activity
             android:name=".SharedPreferenceActivity"
             android:exported="false" />
         <activity
@@ -61,7 +67,7 @@
             android:name=".SimpleListView"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".SplashScreen2"
             android:exported="false" />
         <activity
             android:name=".LifeCycle"
@@ -94,7 +100,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen2"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
