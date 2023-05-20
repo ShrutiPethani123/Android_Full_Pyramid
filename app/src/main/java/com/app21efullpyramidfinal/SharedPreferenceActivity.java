@@ -26,7 +26,6 @@ public class SharedPreferenceActivity extends AppCompatActivity {
         btnDel = findViewById(R.id.btn_spdel);
 
         checkDetails();
-
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +33,7 @@ public class SharedPreferenceActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("username",uname.getText().toString());
                 editor.putString("password",pass.getText().toString());
+                editor.putBoolean("flag",true);
                 editor.apply();
                 uname.setText("");
                 pass.setText("");
@@ -58,6 +58,8 @@ public class SharedPreferenceActivity extends AppCompatActivity {
 
 
     }
+
+
 
     private void checkDetails() {
         SharedPreferences sp = getSharedPreferences("demo",MODE_PRIVATE);

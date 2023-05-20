@@ -25,6 +25,7 @@ public class SplashScreen extends AppCompatActivity {
                 SharedPreferences sp = getSharedPreferences("login",MODE_PRIVATE);
                 boolean check = sp.getBoolean("flag",false);
 
+
                 Intent i;
                 if(check)
                 {

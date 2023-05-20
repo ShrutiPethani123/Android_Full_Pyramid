@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class MyGridAdapter extends BaseAdapter {
 
     private final String name[];
-    private final int img[];
+    private final int[] img;
+
     Context context;
 
     public MyGridAdapter( Context context, String[] name, int[] img) {
@@ -41,7 +42,7 @@ public class MyGridAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view1=layoutInflater.inflate(R.layout.mygridlayout,null);
 
-        ImageView img1 =view1.findViewById(R.id.img_flag);
+        ImageView img1 = view1.findViewById(R.id.img_flag);
         TextView name1 = view1.findViewById(R.id.tv_flag);
 
         img1.setImageResource(img[i]);
