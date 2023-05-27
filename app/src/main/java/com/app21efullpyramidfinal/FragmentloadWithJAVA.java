@@ -26,7 +26,8 @@ public class FragmentloadWithJAVA extends AppCompatActivity {
         btnA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onLoad(new AFragment(),0);
+                onLoad(AFragment.getInstance("Royal",1234),0);
+
             }
         });
 
@@ -34,6 +35,7 @@ public class FragmentloadWithJAVA extends AppCompatActivity {
             @Override
             public void onClick(View view) {
               onLoad(new BFragment(),0);
+
             }
         });
 
@@ -45,15 +47,19 @@ public class FragmentloadWithJAVA extends AppCompatActivity {
         });
     }
 
-    private void onLoad(Fragment f , int flag) {
+    private void onLoad(Fragment fragment , int flag) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        Bundle bundle = new Bundle();
+//        bundle.putString("name","Royal");
+//        bundle.putInt("Code",567);
+//        fragment.setArguments(bundle);
 
         if(flag==1)
         {
-            fragmentTransaction.add(R.id.frame,f);
+            fragmentTransaction.add(R.id.frame,fragment);
         }else{
-            fragmentTransaction.replace(R.id.frame,f);
+            fragmentTransaction.replace(R.id.frame,fragment);
         }
 
         fragmentTransaction.commit();

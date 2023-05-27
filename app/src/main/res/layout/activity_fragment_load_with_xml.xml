@@ -22,10 +22,11 @@
         android:name="com.app21efullpyramidfinal.SecondFragment"
         android:id="@+id/fragment_second"
         />
+
     <fragment
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:name="com.app21efullpyramidfinal.FirstFragment"
         android:id="@+id/fragment_first2"
         />
